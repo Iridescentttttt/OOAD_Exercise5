@@ -1,10 +1,12 @@
 package Figure;
 
+import Plane.PlaneSubject;
 import WearClothes.*;
+import Weather.WeatherSubject;
 
 public class Hunter extends Figure {
-    public Hunter() {
-        super(new WearShirts());
+    public Hunter(WeatherSubject w, PlaneSubject p) {
+        super(w, p);
     }
 
     @Override

@@ -1,28 +1,19 @@
 package Scene;
 
-import Duck.MallardDuck;
-import Figure.Boy;
-import Figure.Girl;
-import Figure.Hunter;
-import FlyBehavior.Fall;
-import FlyBehavior.FlyWithEngine;
-import FlyBehavior.FlyWithWings;
+import Duck.*;
+import Figure.*;
+import FlyBehavior.*;
 import Plane.Plane;
 import WalkBehavior.WalkOnTheGround;
 import Weather.Weather;
 
-public class Scene2 {
+public class Exercise4_1 {
     public static void main(String[] args) throws InterruptedException {
-        System.out.println("场景2：鸭子的生态循环");
+        System.out.println("场景1（Hot）：");
         Thread.sleep(1000);
 
         Weather w = new Weather();
-        Plane p = new Plane(new FlyWithEngine());
-        Boy boy = new Boy(w,p);
-        Girl girl = new Girl(w,p);
-        w.setWeather("暴风雨来临之前");
-        Thread.sleep(1000);
-
+        Plane p = new Plane(new FlyWithWings());
         Hunter hunter = new Hunter(w,p);
         hunter.display();
         Thread.sleep(1000);
@@ -34,7 +25,17 @@ public class Scene2 {
         mallardDuck.display();
         Thread.sleep(1000);
 
+        RedHeadDuck redHeadDuck = new RedHeadDuck();
+        redHeadDuck.display();
+        Thread.sleep(1000);
+
+        RubberDuck rubberDuck = new RubberDuck();
+        rubberDuck.display();
+        Thread.sleep(1000);
+
         mallardDuck.swim();
+        redHeadDuck.swim();
+        rubberDuck.swim();
         Thread.sleep(1000);
 
         mallardDuck.performFly();
@@ -44,8 +45,5 @@ public class Scene2 {
         mallardDuck.setFlyBehavior(new Fall());
         mallardDuck.performFly();
         mallardDuck.die();
-
-        Thread.sleep(2000);
-        mallardDuck.revive();
     }
 }

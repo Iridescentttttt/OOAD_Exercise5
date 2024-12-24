@@ -1,10 +1,13 @@
 package Figure;
 
+import Plane.PlaneSubject;
 import WearClothes.*;
+import Weather.WeatherSubject;
 
 public class Girl extends Figure {
-    public Girl() {
-        super(new WearPullover());
+
+    public Girl(WeatherSubject w, PlaneSubject p) {
+        super(w, p);
     }
 
     @Override
@@ -12,4 +15,5 @@ public class Girl extends Figure {
         System.out.println("Girl 出现,");
         wearClothes.dressedIn(this.getClass().getSimpleName());
     }
+
 }

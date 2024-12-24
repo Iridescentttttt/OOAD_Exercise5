@@ -3,7 +3,7 @@ package Plane;
 import FlyBehavior.*;
 public class Boeing extends Plane {
     public Boeing() {
-        super(new FlyWithWings());
+        super(new FlyWithEngine());
     }
 
     @Override
